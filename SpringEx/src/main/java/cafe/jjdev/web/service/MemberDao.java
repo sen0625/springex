@@ -13,6 +13,11 @@ public class MemberDao {
 	
 	private final String NS ="cafe.jjdev.web.service.MemberMapper.";
 	
+	public Member login(Member member) {
+		System.out.println("login <--memberDao"+member);
+		return sqlSessionTemplate.selectOne(NS+"login", member);
+	}
+	
 	public List<Member> selectMemberList(){
 		return sqlSessionTemplate.selectList(NS+"selectMemberList");
 	}
