@@ -13,6 +13,10 @@
    <!--mvc:annotation-driven은 서블릿을 만들어주는것 요청값을 매핑시킬수 있다     -->
    <!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
    <mvc:resources mapping="/resources/**" location="/resources/" />
+	
+   <!--multipart /form데이터 설정--> 
+   <bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"></bean>
+   
    <!--모든 요청을 가로챈다. /resources/로 요청한 자료는 서블릿이 가로채지 않는다!  -->
    <!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
